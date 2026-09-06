@@ -1,0 +1,17 @@
+Package: owdpublish
+Title: Reviewed Open Data Publishing Pipeline for the WASH Sector (Scratch Prototype)
+Version: 0.0.0.9000
+Authors@R: c(
+    person("Lars", "Schöbitz", , "lschoebitz@ethz.ch", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0003-2196-5015")))
+Description: Submit, clear, build, check, review, publish and register WASH
+    data packages. Wraps washr for the package build, adds a clearance step
+    for sensitive data, a contract check of the dictionary against the data,
+    one metadata model rendered to Frictionless, Croissant and schema.org,
+    a mechanical review floor, an advisory agent report with provenance,
+    reviewer credit, a generated data paper, an AI use statement, and a thin
+    registry that exports outward.
+License: MIT
+Encoding: UTF-8
+Imports: desc, jsonlite, yaml, readr, usethis, washr, utils, tools, stats
+Suggests: rmarkdown, knitr, ggplot2, roxygen2, pkgload, devtools, testthat, openxlsx

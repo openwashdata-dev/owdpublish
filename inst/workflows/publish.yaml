@@ -1,0 +1,21 @@
+# On a release tag: render the data paper, build the site, and (next step) deposit on Zenodo.
+name: publish
+on:
+  push:
+    tags: ["v*"]
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: r-lib/actions/setup-r@v2
+      - uses: quarto-dev/quarto-actions/setup@v2
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: any::pkgdown, any::ggplot2, github::openwashdata/owdpublish
+      - name: Data paper
+        run: Rscript -e 'owdpublish::owd_data_paper(".", render = TRUE)'
+      - name: Site
+        run: Rscript -e 'pkgdown::build_site()'
+      - name: Zenodo deposit
+        run: echo "next step: build the DataCite record from inst/metadata and deposit with the Zenodo API"

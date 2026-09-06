@@ -1,0 +1,16 @@
+# Submission manifest. The intake form writes this file; a submitter can also fill it by hand.
+title: "Household water access survey, Chikwawa District, 2025"
+description: "One row per household: water source, distance, household size, water quality test result, interview date."
+research_question: "Which household characteristics explain reliance on unimproved water sources in Chikwawa District?"
+submitter_name: "Amina Banda"
+submitter_email: "amina@example.org"      # never published; deleted from the public copy at clearance
+contact_email: "data@example.org"         # published as the maintainer contact
+organisation: "Example NGO Malawi"
+country: "Malawi"
+keywords: ["water access", "household survey", "Malawi"]
+rights_holder: "Example NGO Malawi"
+rights_confirmed: true                    # the submitter confirms the right to license the data CC BY 4.0
+consent: informed                         # none | informed | aggregated | not_applicable
+licence: "CC-BY-4.0"
+contains_personal_data: true              # true when names, contacts, precise locations or identifiers are present
+collection_period: "2025-03 to 2025-05"

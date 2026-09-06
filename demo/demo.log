@@ -1,0 +1,76 @@
+
+== 0. synthetic submission with fake personal data ==
+
+== 1. submit ==
+Received sub-20260906-2gub6f: Household water access survey, Chikwawa District, 2025
+
+== 2. clear ==
+sub-20260906-2gub6f cleared (6 sensitivity findings, raw file deleted)
+           column          type hits   action
+1 respondent_name   person_name  200     drop
+2           phone         phone  200     drop
+3           email         email   63     drop
+4        latitude gps_precision  200  round_2
+5       longitude gps_precision  200  round_2
+6             dob    birth_date  200 age_band
+
+== 3. build with washr ==
+  create_skeleton        ok
+  setup_ci               ok
+  setup_rawdata          ok
+  data_processing        ok
+  setup_dictionary       ok
+  fill_descriptions      ok
+  setup_roxygen          ok
+ℹ Setting Config/roxygen2/version to "8.0.0"
+Writing 'NAMESPACE'
+ℹ Loading chikwawawater
+Writing 'chikwawawater.Rd'
+  roxygenise             ok
+  update_description     ok
+  setup_readme           ok
+  build_readme           ok
+✔ 'CITATION.cff' generated.
+══ Validating CFF ══════════════════════════════════════════════════════════════
+✔ 'CITATION.cff' is valid.
+ℹ Writing 1 entry.
+✔ Results written to 'inst/CITATION'.
+  update_citation        ok
+  update_metadata        ok
+  pkgdown_config         ok
+Built demo/out/packages/chikwawawater
+
+== 4. contract check and metadata exports ==
+Contract check: PASS (0 required, 0 advisory)
+Metadata exported: datapackage.json, croissant.json, dataset.jsonld
+
+== 5. advisory agent review, named reviewers, AI use statement ==
+Agent review (advisory, stub-deterministic-v1): 4 notes
+Reviewer credited: Jane Doe (role rev), report at demo/out/packages/chikwawawater/review/reviewer-1.md
+Reviewer credited: John Roe (role rev), report at demo/out/packages/chikwawawater/review/reviewer-2.md
+AI use statement written: 3 assisted tasks, 1 human commits
+[1] TRUE
+
+== 6. publication floor ==
+Required checks: PASS (13 of 13)
+   check     tier  pass
+16   doi advisory FALSE
+
+== 7. data paper ==
+Rendered with Quarto: demo/out/packages/chikwawawater/paper/paper.html
+Data paper written: demo/out/packages/chikwawawater/paper/paper.qmd
+
+== 8. registry ==
+Registry: 1 packages, 1 datasets, 11 variables -> demo/out/registry
+
+== done ==
+# openwashdata registry
+
+Harvested 2026-09-06T13:43:04+0200. 1 packages, 1 datasets, 11 variables.
+
+| package | title | version | published | floor_passed | n_reviewers | n_datasets | spatial | maintainer |
+|---|---|---|---|---|---|---|---|---|
+| chikwawawater | Household water access survey, Chikwawa District, 2025 | 0.0.0.9000 | FALSE | TRUE | 2 | 1 | Malawi | Amina Banda |
+
+Exports: packages.csv, datasets.csv, variables.csv, packages.json (r-universe), catalog.jsonld (schema.org DataCatalog), sitemap.xml.
+Next: a Zenodo community, HDX where in scope, Renku data connectors from the DOIs.
